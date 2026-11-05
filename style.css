@@ -584,7 +584,7 @@ address{font-style:normal}
 }
 
 /* ── Extra breathing room above the couple names ── */
-.env-couple-names { margin-top: 40px !important; }
+.env-couple-names { margin-top: 30px !important; }
 
 /* ══════════════════════════════════════════════
    HERO FIX: push text to bottom so faces show

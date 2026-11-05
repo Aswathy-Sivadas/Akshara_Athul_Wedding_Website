@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="You are cordially invited to the wedding of Akshara Sivadas and Athul Krishna on Sunday, 22 November 2026 at R.K. Mahal, Mettupalayam, Coimbatore." />
+    <meta name="author" content="Akshara Sivadas and Athul Krishna" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Akshara and Athul Krishna Wedding Invitation 22.11.2026" />
+    <meta property="og:description"
+        content="With immense joy, we invite you to celebrate the wedding of Akshara Sivadas and Athul Krishna on 22 November 2026 at R.K. Mahal, Mettupalayam." />
+    <meta property="og:image" content="assets/akshara-athul.jpg" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <title>Akshara and Athul Krishna - Wedding Invitation | 22 November 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Great+Vibes&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <div id="envelope-overlay" class="envelope-overlay">
+        <div class="petals-container">
+            <div class="petal p1"></div>
+            <div class="petal p2"></div>
+            <div class="petal p3"></div>
+            <div class="petal p4"></div>
+            <div class="petal p5"></div>
+            <div class="petal p6"></div>
+            <div class="petal p7"></div>
+            <div class="petal p8"></div>
+            <div class="petal p9"></div>
+            <div class="petal p10"></div>
+        </div>
+        <div class="env-scene">
+            <div class="envelope-wrap" id="envelopeWrap">
+
+              <!-- Flaps -->
+              <div class="env-flap env-flap--left"></div>
+              <div class="env-flap env-flap--right"></div>
+              <div class="env-flap env-flap--bottom"></div>
+              <div class="env-flap env-flap--top" id="envFlapTop"></div>
+
+              <!-- Card body (visible through the envelope) -->
+              <div class="env-body" id="envBody">
+                <div class="env-border-frame">
+                  <div class="env-border-inner">
+                    <!-- Om symbol sits at the very top -->
+                    <div class="env-ganesh">
+                      <svg viewBox="0 0 80 80" width="40" height="40" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="40" cy="40" r="36" fill="none" stroke="#c9a84c" stroke-width="1.2" opacity="0.6"/>
+                        <text x="40" y="56" text-anchor="middle" font-size="38" fill="#c9a84c" font-family="serif" opacity="0.9">&#x950;</text>
+                      </svg>
+                    </div>
+
+                    <!-- Spacer pushes names down past the seal -->
+                    <div class="env-seal-spacer"></div>
+
+                    <!-- Names sit in the lower half, below the seal -->
+                    <div class="env-couple-names">
+                      <span class="env-name-bride">Akshara</span>
+                      <span class="env-name-amp">&amp;</span>
+                      <span class="env-name-groom">Athul Krishna</span>
+                    </div>
+                    <div class="env-ornament-line">
+                      <svg viewBox="0 0 300 14" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="0" y1="7" x2="115" y2="7" stroke="#c9a84c" stroke-width="0.8"/>
+                        <circle cx="132" cy="7" r="3" fill="#c9a84c" opacity="0.7"/>
+                        <circle cx="150" cy="7" r="5" fill="#c9a84c"/>
+                        <circle cx="168" cy="7" r="3" fill="#c9a84c" opacity="0.7"/>
+                        <line x1="185" y1="7" x2="300" y2="7" stroke="#c9a84c" stroke-width="0.8"/>
+                      </svg>
+                    </div>
+                    <p class="env-date-text">Sunday &nbsp;&middot;&nbsp; 22 November 2026</p>
+                    <p class="env-venue-text">R.K. Mahal, Mettupalayam</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ╔══════════════════════╗ -->
+              <!-- ║  FLOATING WAX SEAL   ║ -->
+              <!-- ╚══════════════════════╝ -->
+              <!-- Sits exactly on the flap-fold crease. Tap it to open. -->
+              <div class="env-seal-wrap" id="envSealWrap"
+                   role="button" tabindex="0"
+                   aria-label="Tap the wax seal to open your invitation">
+
+                <!-- Animated glow rings -->
+                <div class="seal-ring seal-ring-1"></div>
+                <div class="seal-ring seal-ring-2"></div>
+                <div class="seal-ring seal-ring-3"></div>
+
+                <!-- The wax seal disc -->
+                <div class="wax-seal-front" id="waxSealFront">
+                  <div class="seal-wax-body">
+                    <!-- Crack lines (hidden until cracking class added) -->
+                    <div class="seal-crack sc-1"></div>
+                    <div class="seal-crack sc-2"></div>
+                    <div class="seal-crack sc-3"></div>
+                    <!-- Border ring -->
+                    <div class="seal-border-ring"></div>
+                    <!-- Inner knurl ring -->
+                    <div class="seal-inner-ring"></div>
+                    <!-- Monogram -->
+                    <div class="seal-monogram">
+                      <span class="sm-letter">A</span>
+                      <span class="sm-amp">&amp;</span>
+                      <span class="sm-letter">A</span>
+                    </div>
+                    <!-- Gloss highlight -->
+                    <div class="seal-gloss"></div>
+                  </div>
+                </div>
+
+                <!-- "Tap to open" label below the seal -->
+                <div class="tap-hint" id="tapHint">
+                  <span class="tap-hint-pulse"></span>
+                  <span class="tap-hint-text">Tap to Open</span>
+                </div>
+
+              </div><!-- /.env-seal-wrap -->
+
+            </div><!-- /.envelope-wrap -->
+        </div>
+    </div>
+
+    <main id="main-website" class="main-website" style="display:none;">
+        <canvas id="sparkleCanvas"></canvas>
+
+        <section id="hero" class="hero">
+            <div class="hero-media">
+                <img src="assets/akshara-athul.jpg" alt="Akshara Sivadas and Athul Krishna" class="hero-photo"
+                    id="heroPhoto" />
+                <div class="hero-overlay-dark"></div>
+                <div class="hero-overlay-gradient"></div>
+            </div>
+            <div class="hero-hearts" aria-hidden="true">
+                <span class="heart h1">❤</span>
+                <span class="heart h2">✦</span>
+                <span class="heart h3">❤</span>
+                <span class="heart h4">✦</span>
+                <span class="heart h5">❤</span>
+                <span class="heart h6">✦</span>
+                <span class="heart h7">✦</span>
+                <span class="heart h8">❤</span>
+            </div>
+            <div class="corner-floral cf-tl" aria-hidden="true">
+                <svg viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+                    <g stroke="#c9a84c" fill="none" opacity="0.65">
+                        <path d="M8,8 C30,8 80,20 90,80 C96,110 80,140 50,150" stroke-width="1.2" />
+                        <path d="M8,8 C20,30 35,60 28,95 C22,122 8,140 8,160" stroke-width="0.8" />
+                        <circle cx="90" cy="80" r="6" fill="#c9a84c" opacity="0.5" />
+                        <circle cx="50" cy="48" r="4" fill="#c9a84c" opacity="0.4" />
+                        <circle cx="28" cy="95" r="4" fill="#c9a84c" opacity="0.4" />
+                        <path d="M90,80 Q100,65 115,70 Q108,85 90,80Z" fill="#c9a84c" opacity="0.3" />
+                        <path d="M50,48 Q62,38 72,48 Q60,58 50,48Z" fill="#c9a84c" opacity="0.25" />
+                    </g>
+                </svg>
+            </div>
+            <div class="corner-floral cf-tr" aria-hidden="true">
+                <svg viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+                    <g stroke="#c9a84c" fill="none" opacity="0.65" transform="scale(-1,1) translate(-160,0)">
+                        <path d="M8,8 C30,8 80,20 90,80 C96,110 80,140 50,150" stroke-width="1.2" />
+                        <path d="M8,8 C20,30 35,60 28,95 C22,122 8,140 8,160" stroke-width="0.8" />
+                        <circle cx="90" cy="80" r="6" fill="#c9a84c" opacity="0.5" />
+                        <path d="M90,80 Q100,65 115,70 Q108,85 90,80Z" fill="#c9a84c" opacity="0.3" />
+                    </g>
+                </svg>
+            </div>
+            <div class="corner-floral cf-bl" aria-hidden="true">
+                <svg viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+                    <g stroke="#c9a84c" fill="none" opacity="0.65" transform="scale(1,-1) translate(0,-160)">
+                        <path d="M8,8 C30,8 80,20 90,80 C96,110 80,140 50,150" stroke-width="1.2" />
+                        <path d="M8,8 C20,30 35,60 28,95 C22,122 8,140 8,160" stroke-width="0.8" />
+                        <circle cx="90" cy="80" r="6" fill="#c9a84c" opacity="0.5" />
+                    </g>
+                </svg>
+            </div>
+            <div class="corner-floral cf-br" aria-hidden="true">
+                <svg viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+                    <g stroke="#c9a84c" fill="none" opacity="0.65" transform="scale(-1,-1) translate(-160,-160)">
+                        <path d="M8,8 C30,8 80,20 90,80 C96,110 80,140 50,150" stroke-width="1.2" />
+                        <path d="M8,8 C20,30 35,60 28,95 C22,122 8,140 8,160" stroke-width="0.8" />
+                        <circle cx="90" cy="80" r="6" fill="#c9a84c" opacity="0.5" />
+                    </g>
+                </svg>
+            </div>
+            <div class="hero-content">
+                <p class="hero-tagline hero-anim" style="--i:0">&#8212; Together With Our Friends &amp; Families &#8212;</p>
+                <div class="hero-divider hero-anim" style="--i:1">
+                    <div class="hd-line"></div>
+                    <svg viewBox="0 0 40 20" width="40" height="20" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5,10 L20,2 L35,10 L20,18 Z" fill="none" stroke="#c9a84c" stroke-width="1" />
+                        <circle cx="20" cy="10" r="3" fill="#c9a84c" />
+                    </svg>
+                    <div class="hd-line"></div>
+                </div>
+                <h1 class="hero-names hero-anim" style="--i:2">
+                    <span class="hn-bride shimmer-text">Akshara</span>
+                    <span class="hn-amp">&amp;</span>
+                    <span class="hn-groom shimmer-text">Athul Krishna</span>
+                </h1>
+                <div class="hero-divider hero-anim" style="--i:3">
+                    <div class="hd-line"></div>
+                    <span class="hd-diamond">&#10022;</span>
+                    <div class="hd-line"></div>
+                </div>
+                <p class="hero-date hero-anim" style="--i:4">22 November 2026</p>
+                <p class="hero-venue-line hero-anim" style="--i:5">R.K. Mahal &nbsp;&middot;&nbsp; Mettupalayam</p>
+                <p class="hero-quote hero-anim" id="heroQuote" style="--i:6"><span class="hero-quote-text"></span><span class="hero-quote-cursor">|</span></p>
+            </div>
+            <div class="hero-scroll-indicator" id="scrollIndicator">
+                <span class="scroll-label">Scroll</span>
+                <div class="scroll-track">
+                    <div class="scroll-thumb"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="invitation" class="section invitation-section">
+            <div class="section-inner">
+                <div class="gold-ornament-top js-reveal">
+                    <svg viewBox="0 0 700 50" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="0" y1="25" x2="250" y2="25" stroke="#c9a84c" stroke-width="0.8" opacity="0.5" />
+                        <path
+                            d="M270,8 Q285,25 300,8 Q315,25 330,8 Q345,25 360,8 Q375,25 390,8 Q405,25 420,8 Q435,25 450,8"
+                            stroke="#c9a84c" stroke-width="1" fill="none" opacity="0.7" />
+                        <circle cx="360" cy="25" r="5" fill="#c9a84c" opacity="0.8" />
+                        <line x1="455" y1="25" x2="700" y2="25" stroke="#c9a84c" stroke-width="0.8" opacity="0.5" />
+                    </svg>
+                </div>
+                <div class="section-badge js-reveal">Wedding Invitation</div>
+                <h2 class="section-heading js-reveal">A Sacred Union</h2>
+                <div class="inv-card js-reveal">
+                    <div class="inv-card-glow"></div>
+                    <div class="inv-corner inv-corner--tl">
+                        <svg viewBox="0 0 70 70" xmlns="http://www.w3.org/2000/svg">
+                            <g stroke="#c9a84c" fill="none">
+                                <path d="M2,2 L2,65" stroke-width="1" opacity="0.4" />
+                                <path d="M2,2 L65,2" stroke-width="1" opacity="0.4" />
+                                <path d="M2,2 Q25,15 45,45" stroke-width="0.7" opacity="0.5" />
+                                <circle cx="2" cy="2" r="4" fill="#c9a84c" opacity="0.7" />
+                                <circle cx="16" cy="16" r="2.5" fill="#c9a84c" opacity="0.4" />
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="inv-corner inv-corner--tr">
+                        <svg viewBox="0 0 70 70" xmlns="http://www.w3.org/2000/svg">
+                            <g stroke="#c9a84c" fill="none" transform="scale(-1,1) translate(-70,0)">
+                                <path d="M2,2 L2,65" stroke-width="1" opacity="0.4" />
+                                <path d="M2,2 L65,2" stroke-width="1" opacity="0.4" />
+                                <path d="M2,2 Q25,15 45,45" stroke-width="0.7" opacity="0.5" />
+                                <circle cx="2" cy="2" r="4" fill="#c9a84c" opacity="0.7" />
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="inv-corner inv-corner--bl">
+                        <svg viewBox="0 0 70 70" xmlns="http://www.w3.org/2000/svg">
+                            <g stroke="#c9a84c" fill="none" transform="scale(1,-1) translate(0,-70)">
+                                <path d="M2,2 L2,65" stroke-width="1" opacity="0.4" />
+                                <path d="M2,2 L65,2" stroke-width="1" opacity="0.4" />
+                                <path d="M2,2 Q25,15 45,45" stroke-width="0.7" opacity="0.5" />
+                                <circle cx="2" cy="2" r="4" fill="#c9a84c" opacity="0.7" />
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="inv-corner inv-corner--br">
+                        <svg viewBox="0 0 70 70" xmlns="http://www.w3.org/2000/svg">
+                            <g stroke="#c9a84c" fill="none" transform="scale(-1,-1) translate(-70,-70)">
+                                <path d="M2,2 L2,65" stroke-width="1" opacity="0.4" />
+                                <path d="M2,2 L65,2" stroke-width="1" opacity="0.4" />
+                                <path d="M2,2 Q25,15 45,45" stroke-width="0.7" opacity="0.5" />
+                                <circle cx="2" cy="2" r="4" fill="#c9a84c" opacity="0.7" />
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="inv-om">
+                        <svg viewBox="0 0 80 80" width="60" height="60" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="40" cy="40" r="36" fill="none" stroke="#c9a84c" stroke-width="1"
+                                opacity="0.5" />
+                            <text x="40" y="57" text-anchor="middle" font-size="42" fill="#c9a84c"
+                                font-family="serif">&#x950;</text>
+                        </svg>
+                    </div>
+                    <p class="inv-blessing-text">
+                        With the blessings of the Almighty and our beloved families,<br />
+                        we joyfully invite you to grace the auspicious wedding of
+                    </p>
+                    <div class="inv-couple">
+                        <div class="inv-person">
+                            <span class="inv-person-name">Akshara</span>
+                            <p class="inv-person-lineage">
+                                Beloved daughter of<br />
+                                <strong>Mr. N. Sivadas &amp; Mrs. N. Shereena (Smitha)</strong><br />
+                                207/B2, Rajiv Gandhi Nagar, Karamadai Road,<br />
+                                Mettupalayam, Coimbatore &#8211; 641 301<br />
+                                <em>(Chakkumpara House, Pallasena)</em>
+                            </p>
+                            <p class="inv-person-grandparents">
+                                Grand D/o. Late Narayanan &amp; Late Rugmani<br />
+                                and Late Nachu &amp; Smt. Santhakumari
+                            </p>
+                        </div>
+                        <div class="inv-and-block">
+                            <div class="inv-and-line"></div>
+                            <span class="inv-and-word">and</span>
+                            <div class="inv-and-line"></div>
+                        </div>
+                        <div class="inv-person">
+                            <span class="inv-person-name">Athul Krishna</span>
+                            <p class="inv-person-lineage">
+                                Beloved son of<br />
+                                <strong>Mr. Unnikrishnan V &amp; Mrs. Sunitha</strong><br />
+                                Karippali House, Valliyode,<br />
+                                Vadakkencherry, Palakkad
+                            </p>
+                        </div>
+                    </div>
+                    <div class="inv-details-row">
+                        <div class="inv-detail-pill js-reveal reveal-stagger ripple-btn" style="--d:0.1s">
+                            <div class="idp-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="26"
+                                    height="26">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" />
+                                    <line x1="16" y1="2" x2="16" y2="6" />
+                                    <line x1="8" y1="2" x2="8" y2="6" />
+                                    <line x1="3" y1="10" x2="21" y2="10" />
+                                </svg>
+                            </div>
+                            <div class="idp-text">
+                                <span class="idp-label">Date</span>
+                                <span class="idp-value">Sunday, 22 November 2026</span>
+                                <span class="idp-sub">1202 Vrischikam 06</span>
+                            </div>
+                        </div>
+                        <div class="inv-detail-pill js-reveal reveal-stagger ripple-btn" style="--d:0.25s">
+                            <div class="idp-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="26"
+                                    height="26">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <polyline points="12 6 12 12 16 14" />
+                                </svg>
+                            </div>
+                            <div class="idp-text">
+                                <span class="idp-label">Muhurtham</span>
+                                <span class="idp-value">10:50 AM &#8211; 11:50 AM IST</span>
+                                <span class="idp-sub">Auspicious Ceremony Time</span>
+                            </div>
+                        </div>
+                        <div class="inv-detail-pill js-reveal reveal-stagger ripple-btn" style="--d:0.4s">
+                            <div class="idp-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="26"
+                                    height="26">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg>
+                            </div>
+                            <div class="idp-text">
+                                <span class="idp-label">Venue</span>
+                                <span class="idp-value">R.K. Mahal</span>
+                                <span class="idp-sub">Annur Road, Boothimedu, Mettupalayam</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="inv-footer-quote">"Your presence and blessings will make this day truly unforgettable."
+                    </p>
+                    <div class="inv-hosts">
+                        <div class="inv-host">
+                            <p class="ih-name">N. Sivadas &amp; N. Shereena (Smitha)</p>
+                            <p class="ih-addr">Mettupalayam, Coimbatore</p>
+                        </div>
+                        <div class="ih-sep"><span>&#10022;</span></div>
+                        <div class="inv-host">
+                            <p class="ih-name">Unnikrishnan V &amp; Sunitha</p>
+                            <p class="ih-addr">Vadakkencherry, Palakkad</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="countdown" class="section countdown-section">
+            <div class="countdown-bg"></div>
+            <div class="section-inner">
+                <div class="section-badge light js-reveal">Mark Your Calendar</div>
+                <h2 class="section-heading light js-reveal">Days Until We Say <em>I Do</em></h2>
+                <div class="countdown-wrap js-reveal" id="countdownWrap">
+                    <div class="cd-unit js-reveal reveal-stagger" style="--d:0.05s">
+                        <div class="cd-number" id="cdDays">21</div>
+                        <div class="cd-label">Days</div>
+                    </div>
+                    <div class="cd-colon">:</div>
+                    <div class="cd-unit js-reveal reveal-stagger" style="--d:0.15s">
+                        <div class="cd-number" id="cdHours">09</div>
+                        <div class="cd-label">Hours</div>
+                    </div>
+                    <div class="cd-colon">:</div>
+                    <div class="cd-unit js-reveal reveal-stagger" style="--d:0.25s">
+                        <div class="cd-number" id="cdMinutes">21</div>
+                        <div class="cd-label">Minutes</div>
+                    </div>
+                    <div class="cd-colon">:</div>
+                    <div class="cd-unit js-reveal reveal-stagger" style="--d:0.35s">
+                        <div class="cd-number" id="cdSeconds">37</div>
+                        <div class="cd-label">Seconds</div>
+                    </div>
+                </div>
+                <div id="celebrationMsg" class="celebration-msg" style="display:none;">
+                    <p>&#127800; Today is the day! &nbsp;Let the celebrations begin! &#127800;</p>
+                </div>
+                <p class="countdown-sub">22 November 2026 &nbsp;&middot;&nbsp; 10:50 AM IST &nbsp;&middot;&nbsp; R.K.
+                    Mahal, Mettupalayam</p>
+            </div>
+        </section>
+
+        <section id="venue" class="section venue-section">
+            <div class="section-inner">
+                <div class="gold-ornament-top js-reveal">
+                    <svg viewBox="0 0 700 50" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="0" y1="25" x2="250" y2="25" stroke="#c9a84c" stroke-width="0.8" opacity="0.5" />
+                        <circle cx="360" cy="25" r="5" fill="#c9a84c" opacity="0.8" />
+                        <line x1="455" y1="25" x2="700" y2="25" stroke="#c9a84c" stroke-width="0.8" opacity="0.5" />
+                    </svg>
+                </div>
+                <div class="section-badge js-reveal">Find Us Here</div>
+                <h2 class="section-heading js-reveal">Wedding Venue</h2>
+                <div class="venue-card js-reveal">
+                    <div class="venue-info-col">
+                        <div class="venue-location-icon pulse-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.3" width="44"
+                                height="44">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                <circle cx="12" cy="10" r="3" />
+                            </svg>
+                        </div>
+                        <h3 class="venue-name">R.K. Mahal</h3>
+                        <address class="venue-address">
+                            Annur Road, Boothimedu,<br />
+                            Mettupalayam,<br />
+                            Coimbatore, Tamil Nadu
+                        </address>
+                        <div class="venue-meta">
+                            <span class="vm-badge">&#128197; Sunday, 22 November 2026</span>
+                            <span class="vm-badge">&#128336; 10:50 AM &#8211; 11:50 AM IST</span>
+                        </div>
+                        <a id="directionsBtn"
+                            href="https://www.google.com/maps/search/R.K.+Mahal+Annur+Road+Boothimedu+Mettupalayam+Coimbatore+Tamil+Nadu"
+                            target="_blank" rel="noopener noreferrer" class="directions-btn ripple-btn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"
+                                height="18">
+                                <polygon points="3 11 22 2 13 21 11 13 3 11" />
+                            </svg>
+                            Get Directions
+                        </a>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"
+                                height="18">
+                                <polygon points="3 11 22 2 13 21 11 13 3 11" />
+                            </svg>
+                            Get Directions
+                        </a>
+                    </div>
+                    <div class="venue-map-col">
+                        <div class="map-container">
+                            <iframe id="venueMapFrame" title="R.K. Mahal Mettupalayam Location"
+                                src="https://maps.google.com/maps?q=R.K.+Mahal+Annur+Road+Boothimedu+Mettupalayam+Coimbatore&output=embed&z=15"
+                                allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                            <div class="map-cover" id="mapCover">
+                                <div class="map-cover-inner">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.3" width="52"
+                                        height="52">
+                                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                        <circle cx="12" cy="10" r="3" />
+                                    </svg>
+                                    <p class="mc-name">R.K. Mahal</p>
+                                    <p class="mc-addr">Annur Road, Boothimedu,<br />Mettupalayam</p>
+                                    <a href="https://www.google.com/maps/search/R.K.+Mahal+Annur+Road+Boothimedu+Mettupalayam+Coimbatore+Tamil+Nadu"
+                                        target="_blank" class="mc-link">Open in Google Maps &#8599;</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="actions" class="section actions-section">
+            <div class="section-inner">
+                <div class="section-badge js-reveal">Be Part of Our Day</div>
+                <h2 class="section-heading js-reveal">Join the Celebration</h2>
+                <p class="actions-intro js-reveal">Save the date and spread the joy with your loved ones</p>
+                <div class="actions-grid">
+                    <div class="action-card js-reveal">
+                        <div class="ac-icon-wrap floating-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" width="40"
+                                height="40">
+                                <path d="M8 6H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-2" />
+                                <rect x="8" y="2" width="8" height="4" rx="1" ry="1" />
+                                <line x1="12" y1="11" x2="12" y2="17" />
+                                <line x1="9" y1="14" x2="15" y2="14" />
+                            </svg>
+                        </div>
+                        <h3 class="ac-title">Save the Date</h3>
+                        <p class="ac-desc">Add our wedding to your calendar so you never miss this precious moment.</p>
+                        <button id="saveDateBtn" class="ac-btn ac-btn--gold ripple-btn" onclick="downloadCalendar(event)">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16"
+                                height="16">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                                <polyline points="7 10 12 15 17 10" />
+                                <line x1="12" y1="15" x2="12" y2="3" />
+                            </svg>
+                            Download .ics Calendar
+                        </button>
+                    </div>
+                    <!-- <div class="action-card js-reveal">
+                        <div class="ac-icon-wrap wa-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="40" height="40">
+                                <path
+                                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z" />
+                            </svg>
+                        </div>
+                        <h3 class="ac-title">Share via WhatsApp</h3>
+                        <p class="ac-desc">Invite your friends and family to share in the joy of our special day.</p>
+                        <button id="whatsappBtn" class="ac-btn ac-btn--wa ripple-btn" onclick="shareWhatsApp()">
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                                <path
+                                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z" />
+                            </svg>
+                            Share on WhatsApp
+                        </button>
+                    </div> -->
+                </div>
+            </div>
+        </section>
+
+        <section id="closing" class="closing-section">
+            <div class="closing-bg"></div>
+            <div class="closing-floral-wave top-wave">
+                <svg viewBox="0 0 1440 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                    <g stroke="#c9a84c" fill="none" opacity="0.35">
+                        <path d="M0,50 Q180,10 360,50 Q540,90 720,50 Q900,10 1080,50 Q1260,90 1440,50"
+                            stroke-width="1.2" />
+                    </g>
+                    <g fill="#c9a84c" opacity="0.4">
+                        <circle cx="360" cy="50" r="5" />
+                        <circle cx="720" cy="50" r="7" />
+                        <circle cx="1080" cy="50" r="5" />
+                    </g>
+                </svg>
+            </div>
+            <div class="section-inner closing-inner">
+                <p class="closing-main-quote js-reveal">"Your presence is the greatest gift we could ask for."</p>
+                <div class="closing-names-block js-reveal">
+                    <div class="closing-divider">
+                        <div class="cd2-line"></div>
+                        <span class="cd2-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</span>
+                        <div class="cd2-line"></div>
+                    </div>
+                    <h2 class="closing-couple-names glow-text">
+                        <span class="cn-bride">Akshara</span>
+                        <span class="cn-amp">&amp;</span>
+                        <span class="cn-groom">Athul Krishna</span>
+                    </h2>
+                    <div class="closing-date-stamp">22 &middot; 11 &middot; 2026</div>
+                    <div class="closing-divider">
+                        <div class="cd2-line"></div>
+                        <span class="cd2-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</span>
+                        <div class="cd2-line"></div>
+                    </div>
+                </div>
+                <p class="closing-sub-quote js-reveal">"With Love, Blessings &amp; Happiness."</p>
+                <p class="closing-venue-line js-reveal">R.K. Mahal, Mettupalayam &nbsp;&middot;&nbsp; 22 November 2026
+                    &nbsp;&middot;&nbsp; 10:50 AM IST</p>
+            </div>
+            <div class="closing-floral-wave bot-wave">
+                <svg viewBox="0 0 1440 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                    <g stroke="#c9a84c" fill="none" opacity="0.35">
+                        <path d="M0,50 Q180,90 360,50 Q540,10 720,50 Q900,90 1080,50 Q1260,10 1440,50"
+                            stroke-width="1.2" />
+                    </g>
+                    <g fill="#c9a84c" opacity="0.4">
+                        <circle cx="360" cy="50" r="5" />
+                        <circle cx="720" cy="50" r="7" />
+                        <circle cx="1080" cy="50" r="5" />
+                    </g>
+                </svg>
+            </div>
+        </section>
+
+        <!-- Floating Back-to-Top Button -->
+        <button id="backToTop" class="back-to-top" aria-label="Back to top" title="Scroll to top">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+                <polyline points="18 15 12 9 6 15" />
+            </svg>
+        </button>
+
+    </main>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

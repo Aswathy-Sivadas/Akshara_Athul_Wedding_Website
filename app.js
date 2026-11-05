@@ -183,18 +183,14 @@ function startParallax(){
   }
 }
 
-// ── SACRED ELEMENT ENGINE: DIYAS, JASMINE, MARIGOLD & LOTUS ──
-var canvas    = document.getElementById('sparkleCanvas');
-var ctx       = canvas ? canvas.getContext('2d') : null;
-var sparks    = [];
-var marigolds = [];
-var jasmines  = [];
-var lotuses   = [];
-var confetti  = [];
-var rafId     = null;
+// ── MINIMAL CLEAN GOLDEN STARDUST ENGINE ──
+var canvas   = document.getElementById('sparkleCanvas');
+var ctx      = canvas ? canvas.getContext('2d') : null;
+var sparks   = [];
+var confetti = [];
+var rafId    = null;
 var isReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 var lastPointerSpark = 0;
-var lastPointerJasmine = 0;
 
 function resizeCanvas(){
   if(!canvas) canvas = document.getElementById('sparkleCanvas');
@@ -204,200 +200,67 @@ function resizeCanvas(){
   canvas.height = window.innerHeight;
 }
 
-// 1. Ambient Sacred Golden Embers & Stardust
-function SacredSpark(x, y, isPointer){
+// Minimal Clean Golden Particle
+function CleanSpark(x, y, isPointer){
   this.isPointer = !!isPointer;
   this.x     = x !== undefined ? x : Math.random() * window.innerWidth;
   this.y     = y !== undefined ? y : Math.random() * window.innerHeight;
-  this.size  = this.isPointer ? (Math.random() * 2.2 + 1) : (Math.random() * 2.5 + .8);
-  this.vx    = this.isPointer ? ((Math.random() - .5) * 2.4) : ((Math.random() - .5) * .6);
-  this.vy    = this.isPointer ? ((Math.random() - .5) * 2.4) : (-(Math.random() * 1.1 + .35));
+  this.size  = this.isPointer ? (Math.random() * 1.2 + 0.6) : (Math.random() * 1.1 + 0.6);
+  this.vx    = this.isPointer ? ((Math.random() - .5) * 1.4) : ((Math.random() - .5) * .35);
+  this.vy    = this.isPointer ? ((Math.random() - .5) * 1.4) : (-(Math.random() * 0.5 + .2));
   this.alpha = 1;
-  this.decay = this.isPointer ? (Math.random() * .035 + .02) : (Math.random() * .01 + .004);
-  var goldPalette = ['#ffd700', '#c9a84c', '#ffb142', '#f0dfa0', '#fff8e7', '#ffeaa7'];
-  this.color = goldPalette[Math.floor(Math.random() * goldPalette.length)];
-  this.twinkleSpeed = Math.random() * .08 + .03;
-  this.twinklePhase = Math.random() * Math.PI * 2;
+  this.maxAlpha = this.isPointer ? 0.75 : (Math.random() * 0.35 + 0.25);
+  this.decay = this.isPointer ? (Math.random() * .04 + .025) : (Math.random() * .006 + .003);
+  var cleanPalette = ['#e0c06a', '#f5e4b3', '#d4af37', '#ffffff'];
+  this.color = cleanPalette[Math.floor(Math.random() * cleanPalette.length)];
 }
-SacredSpark.prototype.update = function(){
+CleanSpark.prototype.update = function(){
   this.x += this.vx;
   this.y += this.vy;
   this.alpha -= this.decay;
-  this.twinklePhase += this.twinkleSpeed;
 };
-SacredSpark.prototype.draw = function(){
+CleanSpark.prototype.draw = function(){
   if(!ctx) return;
-  var currentAlpha = Math.max(0, this.alpha * (0.65 + 0.35 * Math.sin(this.twinklePhase)));
+  var currentAlpha = Math.max(0, this.alpha * this.maxAlpha);
   ctx.save();
   ctx.globalAlpha = currentAlpha;
   ctx.fillStyle   = this.color;
-  ctx.shadowBlur  = this.isPointer ? 8 : 6;
-  ctx.shadowColor = this.color;
   ctx.beginPath();
   ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
   ctx.fill();
   ctx.restore();
 };
 
-// 2. Auspicious Marigold Petal (Chendumalli - Golden/Saffron)
-function MarigoldPetal(x, y){
-  this.x        = x !== undefined ? x : Math.random() * window.innerWidth;
-  this.y        = y !== undefined ? y : (Math.random() * -60 - 20);
-  this.size     = Math.random() * 7 + 7;
-  this.vy       = Math.random() * 1.1 + 0.8;
-  this.vx       = (Math.random() - 0.5) * 0.7;
-  this.angle    = Math.random() * Math.PI * 2;
-  this.angleSpd = (Math.random() - 0.5) * 0.03;
-  this.flip     = Math.random() * Math.PI;
-  this.flipSpd  = Math.random() * 0.045 + 0.02;
-  this.alpha    = Math.random() * 0.35 + 0.55;
-  var marigoldColors = ['#ff9f1a', '#ffa502', '#ff793f', '#e67e22', '#f39c12'];
-  this.color    = marigoldColors[Math.floor(Math.random() * marigoldColors.length)];
-}
-MarigoldPetal.prototype.update = function(){
-  this.y += this.vy;
-  this.x += this.vx + Math.sin(this.angle) * 0.6;
-  this.angle += this.angleSpd;
-  this.flip  += this.flipSpd;
-};
-MarigoldPetal.prototype.draw = function(){
-  if(!ctx) return;
-  ctx.save();
-  ctx.translate(this.x, this.y);
-  ctx.rotate(this.angle);
-  ctx.scale(1, Math.cos(this.flip));
-  ctx.globalAlpha = this.alpha;
-  ctx.fillStyle   = this.color;
-  ctx.shadowBlur  = 4;
-  ctx.shadowColor = 'rgba(255, 159, 26, 0.45)';
-  ctx.beginPath();
-  ctx.ellipse(0, 0, this.size * 0.48, this.size, 0, 0, Math.PI * 2);
-  ctx.fill();
-  ctx.restore();
-};
-
-// 3. Sacred White Jasmine Blossom (Mulla / Pichakam)
-function JasmineBlossom(x, y, isSmall){
-  this.x        = x !== undefined ? x : Math.random() * window.innerWidth;
-  this.y        = y !== undefined ? y : (Math.random() * -60 - 20);
-  this.size     = isSmall ? (Math.random() * 3 + 4) : (Math.random() * 4 + 6);
-  this.vy       = Math.random() * 1.0 + 0.65;
-  this.vx       = (Math.random() - 0.5) * 0.6;
-  this.angle    = Math.random() * Math.PI * 2;
-  this.rotSpd   = (Math.random() - 0.5) * 0.025;
-  this.flip     = Math.random() * Math.PI;
-  this.flipSpd  = Math.random() * 0.035 + 0.015;
-  this.alpha    = Math.random() * 0.3 + 0.65;
-}
-JasmineBlossom.prototype.update = function(){
-  this.y += this.vy;
-  this.x += this.vx + Math.sin(this.angle) * 0.5;
-  this.angle += this.rotSpd;
-  this.flip  += this.flipSpd;
-};
-JasmineBlossom.prototype.draw = function(){
-  if(!ctx) return;
-  ctx.save();
-  ctx.translate(this.x, this.y);
-  ctx.rotate(this.angle);
-  ctx.scale(Math.cos(this.flip), 1);
-  ctx.globalAlpha = this.alpha;
-  ctx.shadowBlur  = 5;
-  ctx.shadowColor = 'rgba(255, 255, 255, 0.7)';
-  // 5 pristine white petals
-  ctx.fillStyle   = '#ffffff';
-  for(var i = 0; i < 5; i++){
-    ctx.rotate((Math.PI * 2) / 5);
-    ctx.beginPath();
-    ctx.ellipse(0, -this.size, this.size * 0.38, this.size * 0.75, 0, 0, Math.PI * 2);
-    ctx.fill();
-  }
-  // Golden yellow stamen center
-  ctx.beginPath();
-  ctx.arc(0, 0, this.size * 0.28, 0, Math.PI * 2);
-  ctx.fillStyle = '#ffd32a';
-  ctx.fill();
-  ctx.restore();
-};
-
-// 4. Sacred Lotus Petal (Thamara - Blush Pink)
-function LotusPetal(x, y){
-  this.x        = x !== undefined ? x : Math.random() * window.innerWidth;
-  this.y        = y !== undefined ? y : (Math.random() * -60 - 20);
-  this.size     = Math.random() * 8 + 7;
-  this.vy       = Math.random() * 1.1 + 0.7;
-  this.vx       = (Math.random() - 0.5) * 0.7;
-  this.angle    = Math.random() * Math.PI * 2;
-  this.angleSpd = (Math.random() - 0.5) * 0.025;
-  this.flip     = Math.random() * Math.PI;
-  this.flipSpd  = Math.random() * 0.038 + 0.018;
-  this.alpha    = Math.random() * 0.3 + 0.5;
-  var lotusColors = ['#f8a5c2', '#ff9ebb', '#f4c0b8', '#f78fb3'];
-  this.color    = lotusColors[Math.floor(Math.random() * lotusColors.length)];
-}
-LotusPetal.prototype.update = function(){
-  this.y += this.vy;
-  this.x += this.vx + Math.sin(this.angle) * 0.5;
-  this.angle += this.angleSpd;
-  this.flip  += this.flipSpd;
-};
-LotusPetal.prototype.draw = function(){
-  if(!ctx) return;
-  ctx.save();
-  ctx.translate(this.x, this.y);
-  ctx.rotate(this.angle);
-  ctx.scale(1, Math.cos(this.flip));
-  ctx.globalAlpha = this.alpha;
-  ctx.fillStyle   = this.color;
-  ctx.shadowBlur  = 4;
-  ctx.shadowColor = 'rgba(248, 165, 194, 0.45)';
-  ctx.beginPath();
-  ctx.ellipse(0, 0, this.size * 0.55, this.size * 0.95, 0, 0, Math.PI * 2);
-  ctx.fill();
-  ctx.restore();
-};
-
-// 5. Celebration Pushpa Vrishti (Flower Shower Confetti)
-function Confetti(x, y){
+// Subtle Clean Celebration Burst
+function CleanConfetti(x, y){
   this.x       = x;
   this.y       = y;
-  var speed    = Math.random() * 10 + 4;
+  var speed    = Math.random() * 6 + 3;
   var angle    = Math.random() * Math.PI * 2;
   this.vx      = Math.cos(angle) * speed;
-  this.vy      = Math.sin(angle) * speed - 3;
-  this.gravity = 0.26;
-  this.drag    = 0.96;
-  this.size    = Math.random() * 7 + 4;
+  this.vy      = Math.sin(angle) * speed - 2;
+  this.gravity = 0.22;
+  this.drag    = 0.94;
+  this.size    = Math.random() * 3 + 2;
   this.alpha   = 1;
-  this.decay   = Math.random() * 0.015 + 0.008;
-  this.rot     = Math.random() * 360;
-  this.rotSpd  = (Math.random() - 0.5) * 12;
-  var palette  = ['#ffd700', '#ff9f1a', '#ffffff', '#f8a5c2', '#c9a84c', '#ffa502'];
-  this.color   = palette[Math.floor(Math.random() * palette.length)];
-  this.isCircle= Math.random() > 0.4;
+  this.decay   = Math.random() * 0.025 + 0.015;
+  this.color   = Math.random() > 0.4 ? '#e0c06a' : '#ffffff';
 }
-Confetti.prototype.update = function(){
+CleanConfetti.prototype.update = function(){
   this.vx *= this.drag;
   this.vy = this.vy * this.drag + this.gravity;
   this.x += this.vx;
   this.y += this.vy;
-  this.rot += this.rotSpd;
   this.alpha -= this.decay;
 };
-Confetti.prototype.draw = function(){
+CleanConfetti.prototype.draw = function(){
   if(!ctx) return;
   ctx.save();
-  ctx.translate(this.x, this.y);
-  ctx.rotate((this.rot * Math.PI) / 180);
-  ctx.globalAlpha = Math.max(0, this.alpha);
+  ctx.globalAlpha = Math.max(0, this.alpha * 0.85);
   ctx.fillStyle   = this.color;
-  if(this.isCircle){
-    ctx.beginPath();
-    ctx.arc(0, 0, this.size * 0.5, 0, Math.PI * 2);
-    ctx.fill();
-  } else {
-    ctx.fillRect(-this.size/2, -this.size/3, this.size, this.size * 0.66);
-  }
+  ctx.beginPath();
+  ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+  ctx.fill();
   ctx.restore();
 };
 
@@ -405,15 +268,8 @@ function celebrateConfetti(x, y){
   if(isReducedMotion) return;
   var cx = (x !== undefined) ? x : (window.innerWidth / 2);
   var cy = (y !== undefined) ? y : (window.innerHeight / 2);
-  // Explode with gold stars, marigolds, and jasmines!
-  for(var i = 0; i < 50; i++){
-    confetti.push(new Confetti(cx, cy));
-  }
-  for(var m = 0; m < 15; m++){
-    marigolds.push(new MarigoldPetal(cx + (Math.random() - 0.5) * 40, cy + (Math.random() - 0.5) * 40));
-  }
-  for(var j = 0; j < 15; j++){
-    jasmines.push(new JasmineBlossom(cx + (Math.random() - 0.5) * 40, cy + (Math.random() - 0.5) * 40, true));
+  for(var i = 0; i < 30; i++){
+    confetti.push(new CleanConfetti(cx, cy));
   }
 }
 
@@ -422,53 +278,24 @@ function sparkLoop(){
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   if(!isReducedMotion){
-    // Ambient golden embers / temple sparks
-    if(sparks.length < 30 && Math.random() < 0.28){
-      sparks.push(new SacredSpark());
-    }
-    // Ambient Marigold petals (golden-saffron)
-    if(marigolds.length < 8 && Math.random() < 0.05){
-      marigolds.push(new MarigoldPetal());
-    }
-    // Ambient Jasmine blossoms (pristine white & gold)
-    if(jasmines.length < 7 && Math.random() < 0.045){
-      jasmines.push(new JasmineBlossom());
-    }
-    // Ambient Lotus petals (sacred blush-pink)
-    if(lotuses.length < 5 && Math.random() < 0.025){
-      lotuses.push(new LotusPetal());
+    // Keep ambient particles very small and sparse (max 14)
+    if(sparks.length < 14 && Math.random() < 0.18){
+      sparks.push(new CleanSpark());
     }
   }
 
-  // Update & draw all sacred elements
+  // Update & draw sparks
   sparks = sparks.filter(function(s){
     s.update();
     s.draw();
-    return s.alpha > 0 && s.y > -20 && s.y < canvas.height + 20;
+    return s.alpha > 0 && s.y > -10 && s.y < canvas.height + 10;
   });
 
-  marigolds = marigolds.filter(function(m){
-    m.update();
-    m.draw();
-    return m.y < canvas.height + 40;
-  });
-
-  jasmines = jasmines.filter(function(j){
-    j.update();
-    j.draw();
-    return j.y < canvas.height + 40;
-  });
-
-  lotuses = lotuses.filter(function(l){
-    l.update();
-    l.draw();
-    return l.y < canvas.height + 40;
-  });
-
+  // Update & draw confetti
   confetti = confetti.filter(function(c){
     c.update();
     c.draw();
-    return c.alpha > 0 && c.y < canvas.height + 50;
+    return c.alpha > 0 && c.y < canvas.height + 30;
   });
 
   rafId = requestAnimationFrame(sparkLoop);
@@ -484,27 +311,22 @@ function startSparkles(){
 
   window.addEventListener('resize', resizeCanvas, { passive:true });
 
-  // Interactive subtle fairy-dust pointer trail (golden ember + occasional jasmine)
+  // Very subtle clean cursor trail (single tiny dot)
   function addPointerSpark(e){
     if(isReducedMotion) return;
     var now = performance.now();
-    if(now - lastPointerSpark < 40) return;
+    if(now - lastPointerSpark < 90) return;
     lastPointerSpark = now;
     var x = e.clientX || (e.touches && e.touches[0] ? e.touches[0].clientX : null);
     var y = e.clientY || (e.touches && e.touches[0] ? e.touches[0].clientY : null);
-    if(x != null && y != null && sparks.length < 55){
-      sparks.push(new SacredSpark(x, y, true));
-      // Occasionally drop a tiny jasmine blossom from pointer
-      if(now - lastPointerJasmine > 180 && jasmines.length < 16){
-        lastPointerJasmine = now;
-        jasmines.push(new JasmineBlossom(x, y, true));
-      }
+    if(x != null && y != null && sparks.length < 28){
+      sparks.push(new CleanSpark(x, y, true));
     }
   }
   window.addEventListener('mousemove', addPointerSpark, { passive:true });
   window.addEventListener('touchmove', addPointerSpark, { passive:true });
 
-  // Pause when tab is backgrounded to save CPU/battery
+  // Pause when tab is backgrounded
   document.addEventListener('visibilitychange', function(){
     if(document.hidden){
       if(rafId){ cancelAnimationFrame(rafId); rafId = null; }

@@ -20,6 +20,7 @@
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Great+Vibes&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap"
         rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 </head>
 
 <body>
@@ -515,6 +516,14 @@
                                 <line x1="12" y1="15" x2="12" y2="3" />
                             </svg>
                             Download .ics Calendar
+                        </button>
+                        <button id="downloadInvitationBtn" class="ac-btn ac-btn--gold ripple-btn secondary-btn" onclick="downloadInvitationCard(event)">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16">
+                                <path d="M12 3v12"/>
+                                <polyline points="7 20 12 15 17 20"/>
+                                <path d="M4 21h16"/>
+                            </svg>
+                            Download Invitation Card
                         </button>
                     </div>
                     <!-- <div class="action-card js-reveal">

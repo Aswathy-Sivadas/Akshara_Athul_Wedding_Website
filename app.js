@@ -366,6 +366,51 @@ if(backToTop){
 }
 
 // ── SAVE THE DATE ─.ICS ──
+function downloadInvitationCard(e){
+  if(e && typeof celebrateConfetti === 'function'){
+    var target = e.currentTarget || e.target;
+    var r = target && target.getBoundingClientRect ? target.getBoundingClientRect() : null;
+    var cx = r ? (r.left + r.width / 2) : (window.innerWidth / 2);
+    var cy = r ? (r.top + r.height / 2) : (window.innerHeight / 2);
+    celebrateConfetti(cx, cy);
+  }
+
+  var card = document.querySelector('.inv-card');
+  if(!card){
+    console.warn('Invitation card element not found.');
+    return;
+  }
+
+  if(!window.html2canvas){
+    alert('Invitation card download is not available right now.');
+    return;
+  }
+
+  window.html2canvas(card, {
+    backgroundColor: '#fdf6e3',
+    scale: 2,
+    useCORS: true,
+    logging: false
+  }).then(function(canvas){
+    var link = document.createElement('a');
+    link.download = 'Akshara-Athul-Wedding-Invitation.png';
+    link.href = canvas.toDataURL('image/png');
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    var btn = document.getElementById('downloadInvitationBtn');
+    if(btn){
+      var orig = btn.innerHTML;
+      btn.innerHTML = '&#10003; Downloaded!';
+      btn.style.background = 'linear-gradient(135deg,#2d7a4f,#3a9e68)';
+      setTimeout(function(){ btn.innerHTML = orig; btn.style.background = ''; }, 3000);
+    }
+  }).catch(function(){
+    alert('The invitation card could not be downloaded. Please try again.');
+  });
+}
+
 function downloadCalendar(e){
   // Celebratory confetti burst!
   if(e && typeof celebrateConfetti === 'function'){
@@ -434,6 +479,7 @@ document.addEventListener('DOMContentLoaded', function(){
   document.body.style.overflow = 'hidden';
 });
 
-window.downloadCalendar  = downloadCalendar;
-window.shareWhatsApp     = shareWhatsApp;
-window.celebrateConfetti = celebrateConfetti;
+window.downloadCalendar     = downloadCalendar;
+window.downloadInvitationCard = downloadInvitationCard;
+window.shareWhatsApp        = shareWhatsApp;
+window.celebrateConfetti    = celebrateConfetti;

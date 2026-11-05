@@ -268,6 +268,7 @@ address{font-style:normal}
 @keyframes btnGoldShimmer{0%,70%{left:-100%}100%{left:200%}}
 .ac-btn--wa{background:linear-gradient(135deg,#128C7E,#25D366);color:#fff;box-shadow:0 4px 18px rgba(37,211,102,.35)}
 .ac-btn--wa:hover{transform:translateY(-2px);box-shadow:0 8px 26px rgba(37,211,102,.5)}
+.secondary-btn{margin-top:14px}
 .ripple-btn{overflow:hidden}
 .ripple-btn .ripple-effect{position:absolute;border-radius:50%;background:rgba(255,255,255,.35);transform:scale(0);animation:ripple .6s linear;pointer-events:none}
 @keyframes ripple{to{transform:scale(4);opacity:0}}

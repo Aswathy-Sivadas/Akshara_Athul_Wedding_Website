@@ -92,6 +92,98 @@ address{font-style:normal}
 .cf-br{bottom:0;right:0;width:clamp(100px,14vw,180px);height:clamp(100px,14vw,180px);animation-delay:1.5s}
 @keyframes floralPulse{0%,100%{opacity:.7;transform:scale(1) rotate(0deg)}50%{opacity:.95;transform:scale(1.04) rotate(1.5deg)}}
 
+/* ══════════════════════════════════════════════════
+   SACRED KERALA DIYAS (NILAVILAKKU) & FLAMES
+══════════════════════════════════════════════════ */
+.sacred-diya {
+  position: absolute;
+  pointer-events: none;
+  z-index: 4;
+  filter: drop-shadow(0 8px 24px rgba(0,0,0,0.55));
+  animation: diyaLevitate 4.5s ease-in-out infinite alternate;
+}
+.diya-hero-left {
+  top: 18%;
+  left: clamp(16px, 4vw, 48px);
+  animation-delay: 0s;
+}
+.diya-hero-right {
+  top: 24%;
+  right: clamp(16px, 4vw, 48px);
+  animation-delay: 1.5s;
+}
+@keyframes diyaLevitate {
+  0%   { transform: translateY(0) rotate(-1deg); }
+  50%  { transform: translateY(-10px) rotate(1deg); }
+  100% { transform: translateY(-4px) rotate(-0.5deg); }
+}
+
+.diya-flame-group {
+  transform-origin: 30px 32px;
+  animation: flameFlicker 0.22s ease-in-out infinite alternate;
+}
+@keyframes flameFlicker {
+  0% {
+    transform: scale(1) skewX(0deg);
+    filter: drop-shadow(0 0 6px rgba(255,165,2,0.85)) drop-shadow(0 0 14px rgba(255,107,107,0.6));
+  }
+  50% {
+    transform: scale(1.06, 0.95) skewX(2deg);
+    filter: drop-shadow(0 0 10px rgba(255,210,60,0.95)) drop-shadow(0 0 18px rgba(255,80,40,0.75));
+  }
+  100% {
+    transform: scale(0.95, 1.05) skewX(-1.8deg);
+    filter: drop-shadow(0 0 7px rgba(255,165,2,0.85)) drop-shadow(0 0 15px rgba(255,107,107,0.6));
+  }
+}
+
+.diya-aura {
+  animation: diyaAuraPulse 2.8s ease-in-out infinite alternate;
+  transform-origin: 30px 24px;
+}
+@keyframes diyaAuraPulse {
+  0%   { transform: scale(0.85); opacity: 0.65; }
+  100% { transform: scale(1.22); opacity: 0.95; }
+}
+
+.inv-om-frame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(12px, 3vw, 28px);
+  margin: 0 auto clamp(12px, 2vw, 18px);
+}
+.diya-card {
+  position: static;
+  filter: drop-shadow(0 4px 14px rgba(92,61,46,0.22));
+}
+.diya-card-left {
+  animation: diyaLevitate 4s ease-in-out infinite alternate;
+}
+.diya-card-right {
+  animation: diyaLevitate 4s ease-in-out infinite alternate 1.8s;
+}
+
+@media (max-width: 700px) {
+  .diya-hero-left {
+    top: 12%;
+    left: 8px;
+    transform: scale(0.8);
+  }
+  .diya-hero-right {
+    top: 16%;
+    right: 8px;
+    transform: scale(0.8);
+  }
+  .inv-om-frame {
+    gap: 8px;
+  }
+  .diya-card svg {
+    width: 24px;
+    height: 36px;
+  }
+}
+
 .hero-content{position:relative;z-index:3;text-align:center;color:#fff;padding:clamp(16px,4vw,32px);max-width:min(820px,96vw);width:100%}
 .hero-tagline{font-family:var(--font-body);font-size:clamp(.65rem,1.8vw,.8rem);font-weight:400;letter-spacing:clamp(.15em,.4vw,.28em);text-transform:uppercase;color:var(--gold-pale);margin-bottom:clamp(10px,2vw,18px)}
 .hero-divider{display:flex;align-items:center;justify-content:center;gap:12px;margin:clamp(10px,1.8vw,16px) auto;max-width:280px}

@@ -132,12 +132,62 @@
     <main id="main-website" class="main-website" style="display:none;">
         <canvas id="sparkleCanvas"></canvas>
 
+        <!-- Shared SVG Gradients for Sacred Kerala Diyas -->
+        <svg width="0" height="0" style="position:absolute;visibility:hidden;" aria-hidden="true">
+            <defs>
+                <radialGradient id="flameGlow" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stop-color="#ffeaa7" stop-opacity="0.95"/>
+                    <stop offset="45%" stop-color="#ff9f43" stop-opacity="0.6"/>
+                    <stop offset="100%" stop-color="#ff6b6b" stop-opacity="0"/>
+                </radialGradient>
+                <linearGradient id="brassGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#fdf0b5"/>
+                    <stop offset="35%" stop-color="#d4af37"/>
+                    <stop offset="70%" stop-color="#8a681c"/>
+                    <stop offset="100%" stop-color="#c9a84c"/>
+                </linearGradient>
+                <linearGradient id="flameGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+                    <stop offset="0%" stop-color="#ff4757"/>
+                    <stop offset="30%" stop-color="#ffa502"/>
+                    <stop offset="70%" stop-color="#fff200"/>
+                    <stop offset="100%" stop-color="#ffffff"/>
+                </linearGradient>
+            </defs>
+        </svg>
+
         <section id="hero" class="hero">
             <div class="hero-media">
                 <img src="assets/akshara-athul.jpg" alt="Akshara Sivadas and Athul Krishna" class="hero-photo"
                     id="heroPhoto" />
                 <div class="hero-overlay-dark"></div>
                 <div class="hero-overlay-gradient"></div>
+            </div>
+            <!-- Sacred Floating Kerala Diyas -->
+            <div class="sacred-diya diya-hero-left" aria-hidden="true">
+                <svg viewBox="0 0 60 90" width="46" height="69" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="30" cy="24" r="22" fill="url(#flameGlow)" class="diya-aura"/>
+                    <g class="diya-flame-group">
+                        <path d="M30,8 Q35,20 34,26 Q33,32 30,32 Q27,32 26,26 Q25,20 30,8 Z" fill="url(#flameGrad)" class="diya-flame"/>
+                        <ellipse cx="30" cy="27" rx="2" ry="3" fill="#ffffff" opacity="0.9"/>
+                    </g>
+                    <line x1="30" y1="28" x2="30" y2="35" stroke="#4a2810" stroke-width="1.8" stroke-linecap="round"/>
+                    <path d="M12,38 Q30,46 48,38 Q46,47 36,49 L35,58 L38,68 L44,78 L16,78 L22,68 L25,58 L24,49 Q14,47 12,38 Z" fill="url(#brassGrad)"/>
+                    <ellipse cx="30" cy="78" rx="18" ry="4" fill="url(#brassGrad)"/>
+                    <ellipse cx="30" cy="80" rx="14" ry="2.5" fill="#8a681c" opacity="0.6"/>
+                </svg>
+            </div>
+            <div class="sacred-diya diya-hero-right" aria-hidden="true">
+                <svg viewBox="0 0 60 90" width="46" height="69" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="30" cy="24" r="22" fill="url(#flameGlow)" class="diya-aura"/>
+                    <g class="diya-flame-group">
+                        <path d="M30,8 Q35,20 34,26 Q33,32 30,32 Q27,32 26,26 Q25,20 30,8 Z" fill="url(#flameGrad)" class="diya-flame"/>
+                        <ellipse cx="30" cy="27" rx="2" ry="3" fill="#ffffff" opacity="0.9"/>
+                    </g>
+                    <line x1="30" y1="28" x2="30" y2="35" stroke="#4a2810" stroke-width="1.8" stroke-linecap="round"/>
+                    <path d="M12,38 Q30,46 48,38 Q46,47 36,49 L35,58 L38,68 L44,78 L16,78 L22,68 L25,58 L24,49 Q14,47 12,38 Z" fill="url(#brassGrad)"/>
+                    <ellipse cx="30" cy="78" rx="18" ry="4" fill="url(#brassGrad)"/>
+                    <ellipse cx="30" cy="80" rx="14" ry="2.5" fill="#8a681c" opacity="0.6"/>
+                </svg>
             </div>
             <div class="hero-hearts" aria-hidden="true">
                 <span class="heart h1">❤</span>
@@ -279,13 +329,41 @@
                             </g>
                         </svg>
                     </div>
-                    <div class="inv-om">
-                        <svg viewBox="0 0 80 80" width="60" height="60" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="40" cy="40" r="36" fill="none" stroke="#c9a84c" stroke-width="1"
-                                opacity="0.5" />
-                            <text x="40" y="57" text-anchor="middle" font-size="42" fill="#c9a84c"
-                                font-family="serif">&#x950;</text>
-                        </svg>
+                    <div class="inv-om-frame">
+                        <div class="sacred-diya diya-card diya-card-left" aria-hidden="true">
+                            <svg viewBox="0 0 60 90" width="30" height="45" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="30" cy="24" r="22" fill="url(#flameGlow)" class="diya-aura"/>
+                                <g class="diya-flame-group">
+                                    <path d="M30,8 Q35,20 34,26 Q33,32 30,32 Q27,32 26,26 Q25,20 30,8 Z" fill="url(#flameGrad)" class="diya-flame"/>
+                                    <ellipse cx="30" cy="27" rx="2" ry="3" fill="#ffffff" opacity="0.9"/>
+                                </g>
+                                <line x1="30" y1="28" x2="30" y2="35" stroke="#4a2810" stroke-width="1.8" stroke-linecap="round"/>
+                                <path d="M12,38 Q30,46 48,38 Q46,47 36,49 L35,58 L38,68 L44,78 L16,78 L22,68 L25,58 L24,49 Q14,47 12,38 Z" fill="url(#brassGrad)"/>
+                                <ellipse cx="30" cy="78" rx="18" ry="4" fill="url(#brassGrad)"/>
+                                <ellipse cx="30" cy="80" rx="14" ry="2.5" fill="#8a681c" opacity="0.6"/>
+                            </svg>
+                        </div>
+                        <div class="inv-om">
+                            <svg viewBox="0 0 80 80" width="60" height="60" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="40" cy="40" r="36" fill="none" stroke="#c9a84c" stroke-width="1"
+                                    opacity="0.5" />
+                                <text x="40" y="57" text-anchor="middle" font-size="42" fill="#c9a84c"
+                                    font-family="serif">&#x950;</text>
+                            </svg>
+                        </div>
+                        <div class="sacred-diya diya-card diya-card-right" aria-hidden="true">
+                            <svg viewBox="0 0 60 90" width="30" height="45" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="30" cy="24" r="22" fill="url(#flameGlow)" class="diya-aura"/>
+                                <g class="diya-flame-group">
+                                    <path d="M30,8 Q35,20 34,26 Q33,32 30,32 Q27,32 26,26 Q25,20 30,8 Z" fill="url(#flameGrad)" class="diya-flame"/>
+                                    <ellipse cx="30" cy="27" rx="2" ry="3" fill="#ffffff" opacity="0.9"/>
+                                </g>
+                                <line x1="30" y1="28" x2="30" y2="35" stroke="#4a2810" stroke-width="1.8" stroke-linecap="round"/>
+                                <path d="M12,38 Q30,46 48,38 Q46,47 36,49 L35,58 L38,68 L44,78 L16,78 L22,68 L25,58 L24,49 Q14,47 12,38 Z" fill="url(#brassGrad)"/>
+                                <ellipse cx="30" cy="78" rx="18" ry="4" fill="url(#brassGrad)"/>
+                                <ellipse cx="30" cy="80" rx="14" ry="2.5" fill="#8a681c" opacity="0.6"/>
+                            </svg>
+                        </div>
                     </div>
                     <p class="inv-blessing-text">
                         With the blessings of the Almighty and our beloved families,<br />
